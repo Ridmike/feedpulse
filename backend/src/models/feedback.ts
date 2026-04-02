@@ -80,12 +80,6 @@ const feedbackSchema = new Schema<IFeedback>(
   }
 );
 
-// Indexes (IMPORTANT for performance)
-feedbackSchema.index({ status: 1 });
-feedbackSchema.index({ category: 1 });
-feedbackSchema.index({ ai_priority: -1 });
-feedbackSchema.index({ createdAt: -1 });
-
 const Feedback: Model<IFeedback> = model<IFeedback>("Feedback", feedbackSchema);
 
 export default Feedback;
